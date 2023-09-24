@@ -12,13 +12,14 @@ async function startScraping() {
         waitUntil: "domcontentloaded",
     });
 
-    async function test() {
+    async function insertButton() {
 
         //Cheat diven laddas in automatiskt.
         //Klicka på Start när gamet har börjat.
-        // Profit
+        //
+        //Profit
         await page.evaluate(() => {
-            const quote = document.querySelector(".quote");
+
             const tables = document.querySelectorAll('table');
 
             let cDiv = makeCheatDiv(tables[1], document);
@@ -106,10 +107,10 @@ async function startScraping() {
             }
         });
     }
-    
+
     //Obs detta är 2.5 sek
     const interval = 2500;
-    setInterval(test, interval);
+    setInterval(insertButton, interval);
 }
 
 startScraping();
