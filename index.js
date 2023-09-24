@@ -14,6 +14,9 @@ async function startScraping() {
 
     async function test() {
 
+        //Cheat diven laddas in automatiskt.
+        //Klicka på Start när gamet har börjat.
+        // Profit
         await page.evaluate(() => {
             const quote = document.querySelector(".quote");
             const tables = document.querySelectorAll('table');
@@ -49,8 +52,9 @@ async function startScraping() {
                         textInputs.value += character;
 
                         index++;
-
-                        setTimeout(typeNextCharacter, 25);
+                        //Här ändrar man hastighet.
+                        //500 är tex en halv sekund
+                        setTimeout(typeNextCharacter, 50);
                     }
                 }
 
@@ -102,7 +106,7 @@ async function startScraping() {
             }
         });
     }
-
+    
     //Obs detta är 2.5 sek
     const interval = 2500;
     setInterval(test, interval);
